@@ -1,0 +1,62 @@
+==========================================================
+
+-------------------- ODP-extract --------------------
+
+	http://github.com/faraday/odp-extract
+
+==========================================================
+
+SUMMARY
+==========================================================
+Scripts to extract clustering information from Open Directory Project (ODP) in Carpineto et al format (e.g. AMBIENT, ODP 239). One such dataset extracted with these scripts is ODP TR-30, available at: http://github.com/faraday/odp-tr30
+
+In their current state, one can extract Turkish data with these scripts but the scripts can be adjusted to perform extraction for any language on ODP.
+Just find "Türkçe" in the scripts and change it to any language category from http://www.dmoz.org/World/
+In odptree.py, you may need to remove the part that treats Turkish data from "Kids and Teens" as "Çocuk ve Genç" category. Or you may keep that part and only put the alternative in your language in the place of "Çocuk ve Genç", as the name of "Kids and Teens" category in your language.
+
+Currently includes 3 scripts:
+* odpfilter.py
+* structureFilter.py
+* odptree.py
+
+USAGE
+==========================================================
+To extract clustering information for Turkish, follow these steps:
+* Download current ODP dump from http://rdf.dmoz.org/
+First, you should download "content.rdf.u8.gz" and gunzip it.
+* odpfilter.py content.rdf.u8 > turkish-content.rdf.u8
+* odptree.py turkish-content.rdf.u8
+
+NOTES
+==========================================================
+To extract a dataset using full content for a language, you can apply filtering to "Kids and Teens" (kt-content.rdf.u8.gz) dump with odpfilter.py and merge the data with filtered version of main dump.
+
+Dumps for other sections of ODP, not included in main dump (content.rdf.u8) are available at:
+http://rdf.dmoz.org/rdf/
+
+
+USAGE LICENSE
+==========================================================
+
+Copyright (C) 2010  Çağatay Çallı
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Author: Çağatay Çallı
+
+
+MORE INFO
+==========================================================
+If you have any further questions or comments, please contact Çağatay Çallı
+<cagatay@ceng.metu.edu.tr>
